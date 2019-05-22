@@ -31,7 +31,7 @@ class TodoList extends React.Component {
         </div>
         <form onSubmit={this.addTodo}>
           <input type="text" value={this.state.input} onChange={this.onInputChange} />
-          <input type="submit" value="create" />
+          <input type="submit" value="Save" />
         </form>
       </div>
     )
