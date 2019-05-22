@@ -1,20 +1,18 @@
-import React from 'react';
+import React from 'react'
 import Header from './Header'
 import TodoList from './Todolist'
 import Footer from './Footer'
-import './css/App.css';
+import '../css/App.css'
 
 class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <Header/> 
+        <Header/>
         <TodoList/>
-        <Footer name="Panupong Kaewkudlor" />
+        <Footer name = "Footer" />
       </div>
     )
   }
 }
-
-
 export default App;

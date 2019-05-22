@@ -7,9 +7,9 @@ class TodoItem extends React.Component {
 }
 
 class TodoList extends React.Component {
-  state = {
-    todos: ['Play Game',],
-    input: '',
+    state = {
+      todos: [],
+      input: '',
   }
 
   onInputChange = (event) => {
@@ -18,21 +18,22 @@ class TodoList extends React.Component {
 
   addTodo = (event) => {
     event.preventDefault()
-    const newTodos = this.state.todos.concat(this.state.input)
+    const newTodos = [...this.state.todos ,this.state.input]
+//  const newTodos = this.state.todos.concat(this.state.input)
     this.setState({ todos: newTodos, input: '' })
   }
 
   render() {
     return (
       <div>
-        <div>
-          { this.state.todos.map((todo, index) => {
-            return <TodoItem key={index} text={todo} /> }) }
-        </div>
         <form onSubmit={this.addTodo}>
           <input type="text" value={this.state.input} onChange={this.onInputChange} />
           <input type="submit" value="Save" />
         </form>
+        <div>
+          { this.state.todos.map((todo, index) => {
+            return <TodoItem key={index} text={todo} /> }) }
+        </div>
       </div>
     )
   }
