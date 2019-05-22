@@ -16,17 +16,16 @@ class TodoList extends React.Component {
     this.setState({ input: event.target.value })
   }
 
-  addTodo = (event) => {
+  onAddTodo = (event) => {
     event.preventDefault()
     const newTodos = [...this.state.todos ,this.state.input]
-//  const newTodos = this.state.todos.concat(this.state.input)
     this.setState({ todos: newTodos, input: '' })
   }
 
   render() {
     return (
       <div>
-        <form onSubmit={this.addTodo}>
+        <form onSubmit={this.onAddTodo}>
           <input type="text" value={this.state.input} onChange={this.onInputChange} />
           <input type="submit" value="Save" />
         </form>
