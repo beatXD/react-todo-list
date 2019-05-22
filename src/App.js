@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from './Header'
-import TodoList from './TodoList'
+import TodoList from './Todolist'
 import Footer from './Footer'
 import './App.css';
 
